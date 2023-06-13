@@ -19,7 +19,7 @@ for dashboard in source_dashboards:
     dashboard_name = dashboard["title"]
     dashboard_uid = dashboard["uid"]
 
-    # Export the dashboard from the source environment
+    # Export the dashboard from the source environments
     exported_dashboard = requests.get(f"{SOURCE_URL}/api/dashboards/uid/{dashboard_uid}", headers={"Authorization": f"Bearer {SOURCE_API_KEY}"})
     exported_dashboard = exported_dashboard.json()["dashboard"]
     print(f"Exported dashboard '{dashboard_name}' from the source environment.")
