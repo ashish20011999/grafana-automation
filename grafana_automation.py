@@ -14,7 +14,7 @@ source_dashboards = requests.get(f"{SOURCE_URL}/api/search?type=dash-db", header
 source_dashboards = source_dashboards.json()
 print("Retrieved dashboards from the source environment.")
 
-# Iterate through each dashboard and migrate it to the destination environment
+# Iterate through each dashboard and migrate it to the destination environments
 for dashboard in source_dashboards:
     dashboard_name = dashboard["title"]
     dashboard_uid = dashboard["uid"]
